@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReactiveFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formbuilder:FormBuilder) { }
 
   ngOnInit(): void {
+    this.myForm = this.formbuilder.group({
+      name: ['John Doe', Validators.required],
+      hp: [0, [Validators.required, Validators.min(1)]]
+    })
+  }
+
+  myForm!:FormGroup;
+  submitted:boolean=false;
+  submitForm():void{
+    /// validate
+    this.submitted = true;
   }
 
 }

@@ -7,13 +7,15 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ThingListComponent } from './thing-list/thing-list.component';
 import { OtherComponent } from './other/other.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ThingComponent } from './thing/thing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReactiveFormComponent,
     ThingListComponent,
-    OtherComponent
+    OtherComponent,
+    ThingComponent
   ],
   imports: [
     BrowserModule,
